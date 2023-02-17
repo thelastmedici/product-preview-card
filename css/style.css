@@ -1,3 +1,19 @@
+:root{
+    --clr-cyan: hsl(158, 36%, 37%);
+    --clr-gray-blue: hsl(30, 38%, 92%);
+
+    --clr-dark-blue: hsl(212, 21%, 14%);
+    --clr-gray-blue: hsl(228, 12%, 48%);
+    --clr-white: hsl(0, 0%, 100%);
+    --fw-regular: 500;
+    --fw-bold: 700;
+
+    --font-family-accent: 'Fraunces', serif;
+    --font-family-basic: 'Montserrat', sans-serif;
+     
+
+}
+
 *,
 *::before,
 *::after
@@ -11,4 +27,28 @@
 
 html, body{
     height: 100%;
+}
+body{
+    line-height: 1.5;
+    -webkit-font-smothing: antialiased;
+}
+
+img,svg{
+    display: block;
+    max-width: 100%;
+}
+
+button{
+    font: inherit;
+}
+
+p,h1, h2, h3, h4, h5, h6{
+    overflow-wrap: break-word;
+}
+
+body{
+    font-family: var(--font-family-basic);
+    font-weight: var(--fw-regular);
+    color:var(--clr-gray-blue);
+    font-size: 0.875rem;
 }
