@@ -1,5 +1,6 @@
 :root{
     --clr-cyan: hsl(158, 36%, 37%);
+    --clr-dark-cyan: hsl(158, 36%, 18%);
     --clr-cream: hsl(30, 38%, 92%);
 
     --clr-dark-blue: hsl(212, 21%, 14%);
@@ -13,6 +14,7 @@
      
 
 }
+
 
 *,
 *::before,
@@ -29,7 +31,7 @@ html, body{
     height: 100%;
 }
 body{
-    line-height: 1.5;
+    line-height: 1.7 ;
     -webkit-font-smothing: antialiased;
 }
 
@@ -45,6 +47,9 @@ button{
 p,h1, h2, h3, h4, h5, h6{
     overflow-wrap: break-word;
 }
+h1,h2,h3{
+    line-height: 1;
+}
 
 body{
     font-family: var(--font-family-basic);
@@ -57,10 +62,90 @@ body{
     min-height: 100vh;
     margin: 1rem;
 }
+
 /*utilities*/
+
 .price{
     display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
 }
+
+.visually-hidden:not(:focus):not(:active){
+     clip: rect(0 0 0 0);
+     clip-path: inset(50%);
+     height: 1px;
+     overflow: hidden;
+     position: absolute;
+     white-space: nowrap;
+     width: 1px;
+}
+/**button styles **/
+.button{
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+    gap: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      border: 0;
+      border-radius:0.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color:var(--clr-cyan);
+      color: var(--clr-white);
+      font-weight: var(--fw-bold);
+      font-size: 0.925rem;
+}
+
+.button[cart-icon="shopping-cart"]::before{
+    content: "";
+    width: 15px;
+    height: 16px;
+    background-image:url("../images/icon-cart.svg");
+
+}
+
+button:is(:hover, :focus){
+background-color: var(--clr-dark-cyan);
+}
+
 .item{
-    
+    --content-padding: 1.5rem;
+    --content-spacing:1rem;
+    display: grid;
+
+    background-color: var(--clr-white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 600px;
 }
+@media (min-width: 600px){
+    .item { 
+        --content-padding: 2rem;
+         grid-template-columns: 1fr 1fr ;
+    }
+}
+
+.item__content{
+    padding: var(--content-padding);
+    display: grid;
+    gap: var(--content-spacing);
+
+}
+.item__category{
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+}
+.item__title{
+    font-size: 2rem;
+    font-family: var(--font-family-accent);
+    color: var(--clr-dark-blue);
+}
+.current__price{
+    font-size: 2rem;
+    font-family: var(--font-family-accent);
+    color: var(--clr-cyan);
+}
+
