@@ -58,7 +58,7 @@ body{
     font-size: 0.875rem;
     background-color: var(--clr-cream);
     display: grid;
-    place-content: center;
+    place-content: center; 
     min-height: 100vh;
     margin: 1rem;
 }
